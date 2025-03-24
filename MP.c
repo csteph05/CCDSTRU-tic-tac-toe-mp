@@ -3,7 +3,7 @@
 
 #define SIZE 16
 
-//testing git
+// testing gitw
 
 int winningPatterns[4][4] = {
     {0, 1, 2, 3},    // (1,1),(1,2),(1,3),(1,4)
@@ -43,16 +43,16 @@ void updateF()
         F[i] = !Uno[i] && !Tres[i];
     }
 }
-/* 
-The displayBoard function prints the current game board. 
+/*
+The displayBoard function prints the current game board.
 It shows the 4x4 grid with row and column labels for easy reference.
 
 Legend:
-    - 'U' represents a position claimed by Uno. 
-    - 'T' represents a position claimed by Tres. 
-    - '.' represents an unoccupied position. 
+    - 'U' represents a position claimed by Uno.
+    - 'T' represents a position claimed by Tres.
+    - '.' represents an unoccupied position.
 
-The board is displayed in a structured format with borders. 
+The board is displayed in a structured format with borders.
 */
 void displayBoard()
 {
@@ -80,10 +80,10 @@ void displayBoard()
     }
     printf("\n");
 }
-/* 
+/*
 The isWinning function checks if a given player has met a winning condition.asm
 
-@param playerSet - A boolean array representing the player's occupied positions. 
+@param playerSet - A boolean array representing the player's occupied positions.
 
 @return true if the player has occupied all positions in any winning pattern,
         false otherwise
@@ -107,12 +107,12 @@ bool isWinning(bool playerSet[SIZE])
     return false;
 }
 /*
-The checkGameOver function checks if the game has ended. 
-It determines if a player has won or if the board is full. 
+The checkGameOver function checks if the game has ended.
+It determines if a player has won or if the board is full.
 
-Winning conditions:    
-                - Uno wins if all positions in a winning pattern are occupied by Uno. 
-                - Tres wins if all positions in a winning pattern are occupied by Tres. 
+Winning conditions:
+                - Uno wins if all positions in a winning pattern are occupied by Uno.
+                - Tres wins if all positions in a winning pattern are occupied by Tres.
                 - Dos wins if there are no available positions left on the board
 */
 void checkGameOver()
@@ -151,10 +151,10 @@ void checkGameOver()
 The NextPlayerMove function processes a player's move
 
 @param x - The row position selected by the player.
-@param y - The column position selected by the player. 
+@param y - The column position selected by the player.
 
-    - Uno and Tres claim positions on their respective turns. 
-    - Dos removes an occupied position when it is its turn. 
+    - Uno and Tres claim positions on their respective turns.
+    - Dos removes an occupied position when it is its turn.
     - If a move is invalid (out of bounds or already occupied), the player is asked to retry.
 */
 void NextPlayerMove(int x, int y)
@@ -200,14 +200,20 @@ int main()
         Tres[i] = false;
     }
     updateF();
-    printf("========================================\n\n");
-    printf("Welcome to (CCDS)TRU-TAC-TOE!\n\n");
-    printf("========================================\n\n");
-    printf("Rules:\n");
-    printf(" - Uno (U) and Tres (T) take turns claiming spaces.\n");
-    printf(" - Dos removes positions to disrupt the game.\n");
-    printf(" - The game ends when a player wins or the board is full.\n\n");
-    printf("========================================\n");
+    printf("==============================================================================================================\n\n");
+    printf("  ____     _____    ____      _   _        _____      _        ____        _____   U  ___ uU _____ u  _   \n");
+    printf(" / __\"| u |_ \" _|U |  _\"\\ uU |\"|u| |      |_ \" _| U  /\"\\  u U /\"___|      |_ \" _|   \\\"_ \\ /\\| ___\"|/U|\"|u \n");
+    printf("<\\___ \\/    | |   \\| |_) |/ \\| |\\| |U  u    | |    \\/ _ \\/  \\| | u  U  u    | |     | | | | |  _|\"  \\| |/ \n");
+    printf(" u___) |   /| |\\   |  _ <    | |_| |/___\\  /| |\\   / ___ \\   | |/__ /___\\  /| |\\.-,_| |_| | | |___   |_|  \n");
+    printf(" |____/>> u |_|U   |_| \\_\\  <<\\___/|__\"__|u |_|U  /_/   \\_\\   \\____|__\"__|u |_|U \\_)-\\___/  |_____|  (_)  \n");
+    printf("  )(  (__)_// \\\\_  //   \\\\_(__) )(        _// \\\\_  \\\\    >>  _// \\\\       _// \\\\_     \\\\    <<   >>  |||_ \n");
+    printf(" (__)    (__) (__)(__)  (__)   (__)      (__) (__)(__)  (__)(__)(__)     (__) (__)   (__)  (__) (__)(__)_) \n\n");
+    printf("==============================================================================================================\n\n");
+    printf("\t\t\t\t\t\tRules:\n\n");
+    printf("\t\t\t - Uno (U) and Tres (T) take turns claiming spaces.\n");
+    printf("\t\t\t - Dos removes positions to disrupt the game.\n");
+    printf("\t\t\t - The game ends when a player wins or the board is full.\n\n");
+    printf("==============================================================================================================\n\n");
     displayBoard();
 
     while (!over) // loops until either one of the player wins or there are no more free positions
@@ -251,8 +257,8 @@ int main()
 
         NextPlayerMove(x, y);
     }
-    printf("========================================\n");
-    printf("Game Over! Thanks for Playing!\n");
+    printf("========================================\n\n");
+    printf("Game Over! Thanks for Playing!\n\n");
     printf("========================================\n");
     return 0;
 }
